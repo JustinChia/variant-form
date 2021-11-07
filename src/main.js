@@ -11,11 +11,15 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '@/styles/index.scss'
 import '@/iconfont/iconfont.css'
 
-import {loadExtension} from '@/extension/extension-loader'
+import ViewUI from 'view-design';
 
-loadExtension()
+import {loadExtension} from '@/extension/extension-loader'
+import {viewDesignExtensions} from '@/extension/view-ui/iview-extension-loader'
+
+loadExtension([viewDesignExtensions]);
 
 Vue.use(ElementUI, { size: 'small' })
+Vue.use(ViewUI, { size: 'small' })
 
 if (typeof window !== 'undefined') {
   window.axios = axios

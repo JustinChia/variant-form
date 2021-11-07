@@ -64,7 +64,10 @@ export default {
       return i18n.te(key1) ? i18n._t(key1, i18n.locale, i18n._getMessages()) :
           i18n._t(key2, i18n.locale, i18n._getMessages())
     },
-
-
+    
+    //extension 的i18n注册
+    addResource(lang,lang_resources){
+        i18n.mergeLocaleMessage(lang,lang_resources);     
+    }
   }
 }
