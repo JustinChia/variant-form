@@ -18,7 +18,7 @@ import AlertWidget from '@/extension/samples/alert/alert-widget'
 import {registerFWGenerator} from '@/utils/sfc-generator'
 import {alertTemplateGenerator} from '@/extension/samples/extension-sfc-generator'
 
-export const loadExtension = function (extendLoaders) {
+export const loadExtension = function () {
 
   /**
    * 加载容器组件步骤：
@@ -106,15 +106,4 @@ export const loadExtension = function (extendLoaders) {
   registerFWGenerator('alert', alertTemplateGenerator)  //注册字段组件的代码生成器
   /* -------------------------------------------------- */
   /* 字段组件加载完毕 end */
-
-
-    //Justin:批量加载组件
-    extendLoaders.forEach(extension => {
-        extension.install({
-            addContainerWidgetSchema,
-            addCustomWidgetSchema,
-            registerFWGenerator,
-            PERegister
-        });
-  });
 }

@@ -63,7 +63,6 @@ module.exports = {
       config.externals = {
         'vue': 'Vue',
         'element-ui': 'ELEMENT',
-        "view-design": "iview",
         //'quill': 'Quill',
       }
     }
