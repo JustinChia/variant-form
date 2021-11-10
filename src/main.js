@@ -13,8 +13,6 @@ import '@/iconfont/iconfont.css'
 
 import {loadExtension} from '@/extension/extension-loader'
 
-loadExtension()
-
 Vue.use(ElementUI, { size: 'small' })
 
 if (typeof window !== 'undefined') {

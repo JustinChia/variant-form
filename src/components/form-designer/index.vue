@@ -41,8 +41,12 @@
         </el-header>
         <el-main class="form-widget-main">
           <el-scrollbar class="container-scroll-bar" :style="{height: scrollerHeight}">
-            <v-form-widget :designer="designer" :form-config="designer.formConfig">
+            
+            <v-form-widget-viewui v-if="UI=='viewui'" :designer="designer" :form-config="designer.formConfig"></v-form-widget-viewui>
+            <v-form-widget v-else :designer="designer" :form-config="designer.formConfig">
             </v-form-widget>
+
+
           </el-scrollbar>
         </el-main>
       </el-container>
@@ -51,7 +55,6 @@
         <setting-panel :designer="designer" :selected-widget="designer.selectedWidget" :form-config="designer.formConfig" />
       </el-aside>
     </el-container>
-
   </el-container>
 </template>
 
@@ -60,6 +63,7 @@
   import ToolbarPanel from './toolbar-panel/index'
   import SettingPanel from './setting-panel/index'
   import VFormWidget from './form-widget/index'
+  import VFormWidgetViewui from '@/extension/view-ui/form-widget/index'
   import {createDesigner} from "@/components/form-designer/designer";
   import {addWindowResizeHandler, deepClone, getQueryParam} from "@/utils/util";
   import {MOCK_CASE_URL, VARIANT_FORM_VERSION} from "@/utils/config";
@@ -74,6 +78,7 @@
       ToolbarPanel,
       SettingPanel,
       VFormWidget,
+      VFormWidgetViewui
     },
     props: {
       fieldListApi: {
@@ -98,7 +103,10 @@
 
         designer: createDesigner(this),
 
-        fieldList: []
+        fieldList: [],
+
+        //从环境变量获取使用的前端框架，默认是elementui
+        UI: process.env.VUE_APP_RUN_UI_ENVIROMENT
       }
     },
     provide() {

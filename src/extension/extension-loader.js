@@ -18,7 +18,9 @@ import AlertWidget from '@/extension/samples/alert/alert-widget'
 import {registerFWGenerator} from '@/utils/sfc-generator'
 import {alertTemplateGenerator} from '@/extension/samples/extension-sfc-generator'
 
-export const loadExtension = function () {
+
+//extraExtensionLoaders 除了方法本体加载Extension之外的ExtensionLoader
+export const loadExtension = function (extraExtensionLoaders) {
 
   /**
    * 加载容器组件步骤：
@@ -107,9 +109,8 @@ export const loadExtension = function () {
   /* -------------------------------------------------- */
   /* 字段组件加载完毕 end */
 
-
     //批量加载组件
-    extendLoaders.forEach(extension => {
+    extraExtensionLoaders.forEach(extension => {
         extension.install({
             addContainerWidgetSchema,
             addCustomWidgetSchema,

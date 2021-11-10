@@ -1,4 +1,4 @@
-export const viewDesignFields = [
+export const viewuiFields = [
   {
     type: 'iview-button',
     icon: 'button',

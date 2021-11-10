@@ -15,7 +15,7 @@
             ref="fieldEditor"
             :type="field.options.type"
             :shape="field.options.circle?'circle':undefined"
-            :size="field.options.size"
+            :size="field.options.size||'default'"
             :icon="field.options.icon"
             :disabled="field.options.disabled"
             @click.native="handleButtonWidgetClick"

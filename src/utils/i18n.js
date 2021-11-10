@@ -65,6 +65,10 @@ export default {
           i18n._t(key2, i18n.locale, i18n._getMessages())
     },
 
+    //注册Extension时使用
+    addResource(lang,lang_resources){
+      i18n.mergeLocaleMessage(lang,lang_resources);     
+    }
 
   }
 }
