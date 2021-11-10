@@ -9,13 +9,13 @@
         :sub-form-row-index="subFormRowIndex"
         :sub-form-col-index="subFormColIndex"
         :sub-form-row-id="subFormRowId"
-    >
+    >{{field.options}}
+
         <Button
             ref="fieldEditor"
             :type="field.options.type"
-            :plain="field.options.plain"
-            :round="field.options.round"
-            :circle="field.options.circle"
+            :shape="field.options.circle?'circle':undefined"
+            :size="field.options.size"
             :icon="field.options.icon"
             :disabled="field.options.disabled"
             @click.native="handleButtonWidgetClick"

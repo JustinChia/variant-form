@@ -108,7 +108,7 @@ export const loadExtension = function (extendLoaders) {
   /* 字段组件加载完毕 end */
 
 
-    //Justin:批量加载组件
+    //批量加载组件
     extendLoaders.forEach(extension => {
         extension.install({
             addContainerWidgetSchema,

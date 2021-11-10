@@ -10,7 +10,7 @@ export const viewDesignFields = [
       size: '',
       disabled: false,
       hidden: false,
-      type: '',
+      type: 'default',
       plain: false,
       round: false,
       circle: false,
