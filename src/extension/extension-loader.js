@@ -18,7 +18,7 @@ import AlertWidget from '@/extension/samples/alert/alert-widget'
 import {registerFWGenerator} from '@/utils/sfc-generator'
 import {alertTemplateGenerator} from '@/extension/samples/extension-sfc-generator'
 
-export const loadExtension = function (extendLoaders) {
+export const loadExtension = function () {
 
   /**
    * 加载容器组件步骤：

@@ -117,7 +117,6 @@
     },
     methods: {
       getWidgetName(widget) {
-        console.log(widget.type);
         return widget.type + '-widget'
       },
 
